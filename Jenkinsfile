@@ -1,8 +1,8 @@
 pipeline {
-    agent { label 'Jenkins-Agent' }
+    agent { label 'jenkins-agent' }
     tools {
-        jdk 'Java17'
-        maven 'Maven3'
+        jdk 'java21'
+        maven 'maven'
     }
     environment {
 	    APP_NAME = "register-app-pipeline"
@@ -22,7 +22,7 @@ pipeline {
 
         stage("Checkout from SCM"){
                 steps {
-                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/Ashfaque-9x/register-app'
+                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/simbudevops/cicd-project9.1.git'
                 }
         }
 
